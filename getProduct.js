@@ -1,7 +1,9 @@
 (function(){
     function findGallery() {
         if (document.getElementsByClassName('Product__Gallery').length > 0 && document.getElementsByClassName('Product__SlideItem').length > 0) {
-            return {container: '.Product__Gallery', element: '.Product__SlideItem'}
+            return {container: '.Product__Gallery', element: '.Product__SlideItem'};
+        }else if (document.getElementsByClassName('product-single__photo-wrapper').length > 0 && document.getElementsByClassName('product-single__photo').length > 0) {
+            return {container: '.product-single__photo-wrapper', element: '.product-single__photo'};
         }
         return null;
     }
