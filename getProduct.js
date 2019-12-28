@@ -7,7 +7,10 @@ if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) 
         console.log(productId);
         console.log(Shopify.shop)
         window.RestARInjector.init({
-            
+            container: ".Product__Gallery",
+            element: ".Product__SlideItem",
+            productId: 4127557779542,
+            models_list: "secretoshape"
         })
     }
     document.head.appendChild(el);
