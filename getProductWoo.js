@@ -9,7 +9,6 @@
     var productId = null;
     var gallery = findGallery();
     if (gallery !== null) {
-        productId = ShopifyAnalytics.meta.product.id;
         var el = document.createElement('script');
         el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
         el.onload = ()=> {
