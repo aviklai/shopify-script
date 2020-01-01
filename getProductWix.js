@@ -5,7 +5,7 @@
         }
         return null;
     }
-
+    console.log('getProductWix');
     setTimeout(function() {
         var productId = null;
         var gallery = findGallery();
