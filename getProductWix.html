@@ -4,8 +4,8 @@
         <script type="application/javascript">
             (function(){
                 function findGallery() {
-                    if (document.getElementsByClassName('slick-slide').length > 0 && document.getElementsByClassName('_1M-R0').length > 0) {
-                        return {container: '.slick-slide', element: '._1M-R0'};
+                    if (document.querySelectorAll('[data-hook="slider-gallery-slide"]').length > 0 && document.querySelectorAll('[data-hook="product-thumbnail-wrapper"]').length > 0) {
+                        return {container: '[data-hook="slider-gallery-slide"]', element: '[data-hook="product-thumbnail-wrapper"]'};
                     }
                     return null;
                 }
