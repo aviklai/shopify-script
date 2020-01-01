@@ -4,7 +4,7 @@
         <script type="application/javascript">
             (function(){
                 function findGallery() {
-                    if (document.querySelectorAll('[data-hook="slider-gallery-slide"]').length > 0 && document.querySelectorAll('[data-hook="product-thumbnail-wrapper"]').length > 0) {
+                    if (window.parent.document.querySelectorAll('[data-hook="slider-gallery-slide"]').length > 0 && window.parent.document.querySelectorAll('[data-hook="product-thumbnail-wrapper"]').length > 0) {
                         return {container: '[data-hook="slider-gallery-slide"]', element: '[data-hook="product-thumbnail-wrapper"]'};
                     }
                     return null;
