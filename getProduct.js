@@ -3,7 +3,6 @@
         if (document.getElementsByClassName('Product__Gallery').length > 0 && document.getElementsByClassName('Product__SlideItem').length > 0) {
             return {container: '.Product__Gallery', element: '.Product__SlideItem'};
         }else if (document.getElementsByClassName('product-single__photo-wrapper').length > 0 && document.getElementsByClassName('product-single__photo').length > 0) {
-            document.getElementsByClassName('product-single__photo')[0].style.paddingTop = "0px !important"; 
             return {container: '.product-single__photo-wrapper', element: '.product-single__photo'};
         }
         return null;
@@ -23,6 +22,9 @@
                     productId: 4127557779542,
                     models_list: "secretoshape"
                 })
+                if (gallery.element === '.product-single__photo') {
+                    document.getElementsByClassName('product-single__photo')[0].style.paddingTop = "0px !important";
+                }
             }
             document.head.appendChild(el);
         }    
