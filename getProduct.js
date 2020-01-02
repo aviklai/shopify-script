@@ -4,6 +4,8 @@
             return {container: '.Product__Gallery', element: '.Product__SlideItem'};
         }else if (document.getElementsByClassName('product-single__photo-wrapper').length > 0 && document.getElementsByClassName('product-single__photo').length > 0) {
             document.getElementsByClassName('product-single__photo')[0].style.paddingTop = "0px";
+            document.getElementsByClassName('product-single__photo')[0].style.height = document.getElementsByClassName('product-single__photo')[0].offsetHeight + 'px';
+            document.getElementsByClassName('product-single__photo')[0].style.width = document.getElementsByClassName('product-single__photo')[0].offsetWidth + 'px';
             return {container: '.product-single__photo-wrapper', element: '.product-single__photo'};
         }
         return null;
