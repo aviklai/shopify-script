@@ -4,16 +4,16 @@
     
     function findGallery() {
         if (document.getElementsByClassName(gallery1.container).length > 0 && document.getElementsByClassName(gallery1.element).length > 0) {
-            return {container: gallery1.container, element: gallery1.element};
+            return {container: '.' + gallery1.container, element: '.' + gallery1.element};
         }else if (document.getElementsByClassName(gallery2.container).length > 0 && document.getElementsByClassName(gallery2.element).length > 0) {
-            return {container: gallery2.container, element: gallery2.element};
+            return {container: '.' + gallery2.container, element: '.' + gallery2.element};
         }
         return null;
     }
 
     function preAdjustments(container) {
         switch (container) {
-            case gallery2.container:
+            case '.' + gallery2.container:
                 document.getElementsByClassName(gallery2.element)[0].style.height = document.getElementsByClassName(gallery2.element)[0].offsetHeight + 'px';
                 document.getElementsByClassName(gallery2.element)[0].style.width = document.getElementsByClassName(gallery2.element)[0].offsetWidth + 'px';                
                 break;
@@ -25,7 +25,7 @@
 
     function postAdjustments(container) {
         switch (container) {
-            case gallery2.container:
+            case '.' + gallery2.container:
                 document.getElementsByClassName(gallery2.element)[0].style.paddingTop = "0px";                
                 break;
         
