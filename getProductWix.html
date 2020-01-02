@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="//static.parastorage.com/services/js-sdk/1.109.0/js/wix.min.js"></script>
         <script type="application/javascript">
             (function(){
                 function findGallery() {
@@ -9,6 +10,7 @@
                     }
                     return null;
                 }
+                console.log(Wix);
                 var interval = setInterval(function() {
                     var productId = null;
                     var gallery = findGallery();
