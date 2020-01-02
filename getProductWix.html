@@ -10,7 +10,9 @@
                     }
                     return null;
                 }
-                console.log(Wix);
+                Wix.Worker.addEventListener(Wix.Events.PAGE_NAVIGATION, function(page) {
+                    console.log(page);
+                });
                 var productId = null;
                 var gallery = findGallery();
                 if (gallery !== null) {
