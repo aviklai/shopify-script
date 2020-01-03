@@ -14,7 +14,8 @@
             {container: '.product__photo', element: '.product__photo--single', preAdjustments: function() { commonElementAdjustment(this.element) }},
             {container: '.photos__item', element: '.product-single__photo', preAdjustments: function() { commonElementAdjustment(this.element) }},
             {container: '.lazyload__image-wrapper', element: '.product__image-wrapper', preAdjustments: function() { commonElementAdjustment(this.element) }},
-            {container: '.product-single__photo--flex', element: '.product-single__photo--container', preAdjustments: function() { commonElementAdjustment(this.element) }}
+            {container: '.product-single__photo--flex', element: '.product-single__photo--container', preAdjustments: function() { commonElementAdjustment(this.element) }},
+            {container: '.product-single__photos', element: '.product-single__image-wrapper', preAdjustments: function() { commonElementAdjustment(this.element) }}
         ]
     }  
 
