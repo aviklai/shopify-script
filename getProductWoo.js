@@ -10,7 +10,7 @@
         var productId = null;
         var gallery = findGallery();
         if (gallery !== null) {
-            if (document.querySelectorAll('[name="add-to-cart"]')[0].length > 0) {
+            if (document.querySelectorAll('[name="add-to-cart"]').length > 0) {
                 productId = document.querySelectorAll('[name="add-to-cart"]')[0].value;
                 var el = document.createElement('script');
                 el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
