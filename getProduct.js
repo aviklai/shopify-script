@@ -1,19 +1,17 @@
 (function(){
     
+    function commonElementAdjustment(element) {
+        document.querySelectorAll(element)[0].style.height = document.querySelectorAll(element)[0].offsetHeight + 'px';
+        document.querySelectorAll(element)[0].style.width = document.querySelectorAll(element)[0].offsetWidth + 'px';                
+        document.querySelectorAll(element)[0].style.paddingTop = "0px"; 
+    }
+
     function getGalleries() {
         return [
             {container: '.Product__Gallery', element: '.Product__SlideItem'},
-            {container: '.product-single__photo-wrapper', element: '.product-single__photo', preAdjustments: function() { 
-                document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(this.element)[0].offsetHeight + 'px';
-                document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(this.element)[0].offsetWidth + 'px';                
-                document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
-            }},
-            {container: '.product-single__featured-image-wrapper', element: '.product-single__photos', preAdjustments: function() { 
-                document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(this.element)[0].offsetHeight + 'px';
-                document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(this.element)[0].offsetWidth + 'px';                
-                document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
-            }},
-            {container: '.product__photo', element: '.product__photo--single'}
+            {container: '.product-single__photo-wrapper', element: '.product-single__photo', preAdjustments: commonElementAdjustment},
+            {container: '.product-single__featured-image-wrapper', element: '.product-single__photos', preAdjustments: commonElementAdjustment},
+            {container: '.product__photo', element: '.product__photo--single', preAdjustments: commonElementAdjustment}
         ]
     }  
 
