@@ -34,23 +34,15 @@
         return null;        
     }    
  
-    var productId = null;
-    if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) {
-        var gallery = galleryFactory(getGalleries());
-        if (gallery !== null) {
-            gallery.preAdjustments();
-            productId = ShopifyAnalytics.meta.product.id;
-            var el = document.createElement('script');
-            el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
-            el.onload = ()=> {
-                window.RestARInjector.init({
-                    container: gallery.container,
-                    element: gallery.element,
-                    productId: 4127557779542,
-                    models_list: "secretoshape"
-                });
-            }
-            document.head.appendChild(el);
-        }    
+    var productId = null; //get product from hidden input
+    var el = document.createElement('script');
+    el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
+    el.onload = ()=> {
+        window.RestARInjector.init({
+            fotorama: true,
+            productId: 4127557779542,
+            models_list: "secretoshape"
+        })
     }
+    document.head.appendChild(el);
 })();
