@@ -4,8 +4,8 @@
         return [
             {container: '.Product__Gallery', element: '.Product__SlideItem'},
             {container: '.product-single__photo-wrapper', element: '.product-single__photo', preAdjustments: function() { 
-                document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(gallery2.element)[0].offsetHeight + 'px';
-                document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(gallery2.element)[0].offsetWidth + 'px';                
+                document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(this.element)[0].offsetHeight + 'px';
+                document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(this.element)[0].offsetWidth + 'px';                
                 document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
             }}
         ]
