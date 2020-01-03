@@ -26,7 +26,7 @@
 
     function galleryFactory(galleries) {
         for (let index = 0; index < galleries.length; index++) {
-           if (document.querySelectorAll(galleries[index].container).length > 0 && document.querySelectorAll(galleries[index].element).length > 0) {
+           if (document.querySelectorAll(galleries[index].container).length > 0 && document.querySelectorAll(galleries[index].element).length > 0 && document.querySelectorAll(galleries[index].element)[0].nodeName !== 'IMG') {
                return new Gallery(galleries[index].container, galleries[index].element, galleries[index].preAdjustments);
            }            
         }
