@@ -13,7 +13,7 @@
                 document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(this.element)[0].offsetWidth + 'px';                
                 document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
             }},
-            {container: '.product__photo grid__item medium-up--one-half', element: '.product__photo--single product__photo--variant-wrapper'}
+            {container: '.product__photo', element: '.product__photo--single'}
         ]
     }  
 
