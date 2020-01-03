@@ -36,7 +36,6 @@
                     productId: 4127557779542,
                     models_list: "secretoshape"
                 });
-                postAdjustments(gallery.container);    
             }
             document.head.appendChild(el);
         }    
