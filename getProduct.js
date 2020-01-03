@@ -14,7 +14,7 @@
 
     function galleryFactory() {
         if (document.querySelectorAll(gallery1.container).length > 0 && document.querySelectorAll(gallery1.element).length > 0) {
-            return new Gallery(gallery1.container, gallery1.element, null);
+            return new Gallery(gallery1.container, gallery1.element);
         }else if (document.querySelectorAll(gallery2.container).length > 0 && document.querySelectorAll(gallery2.element).length > 0) {
             return new Gallery(gallery2.container, gallery2.element, gallery2.preAdjustments);
         }
