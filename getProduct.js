@@ -1,44 +1,31 @@
 (function(){
-    var gallery1 = {container: 'Product__Gallery', element: 'Product__SlideItem'};
-    var gallery2 = {container: 'product-single__photo-wrapper', element: 'product-single__photo'};
+    var gallery1 = {container: '.Product__Gallery', element: '.Product__SlideItem'};
+    var gallery2 = {container: '.product-single__photo-wrapper', element: '.product-single__photo', preAdjustments: function() { 
+        document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(gallery2.element)[0].offsetHeight + 'px';
+        document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(gallery2.element)[0].offsetWidth + 'px';                
+        document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
+    }};
     
-    function findGallery() {
-        if (document.getElementsByClassName(gallery1.container).length > 0 && document.getElementsByClassName(gallery1.element).length > 0) {
-            return {container: '.' + gallery1.container, element: '.' + gallery1.element};
-        }else if (document.getElementsByClassName(gallery2.container).length > 0 && document.getElementsByClassName(gallery2.element).length > 0) {
-            return {container: '.' + gallery2.container, element: '.' + gallery2.element};
+    function Gallery(container, element, preAdjustments) {
+        this.container = container;
+        this.element = element;
+        this.preAdjustments = preAdjustments ? preAdjustments : function() {};
+    }
+
+    function galleryFactory() {
+        if (document.querySelectorAll(gallery1.container).length > 0 && document.querySelectorAll(gallery1.element).length > 0) {
+            return new Gallery(gallery1.container, gallery1.element, null);
+        }else if (document.querySelectorAll(gallery2.container).length > 0 && document.querySelectorAll(gallery2.element).length > 0) {
+            return new Gallery(gallery2.container, gallery2.element, gallery2.preAdjustments);
         }
         return null;
-    }
-
-    function preAdjustments(container) {
-        switch (container) {
-            case '.' + gallery2.container:
-                document.getElementsByClassName(gallery2.element)[0].style.height = document.getElementsByClassName(gallery2.element)[0].offsetHeight + 'px';
-                document.getElementsByClassName(gallery2.element)[0].style.width = document.getElementsByClassName(gallery2.element)[0].offsetWidth + 'px';                
-                document.getElementsByClassName(gallery2.element)[0].style.paddingTop = "0px";                
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    function postAdjustments(container) {
-        switch (container) {
-            case '.' + gallery2.container:
-                break;
-        
-            default:
-                break;
-        }
-    }
-
+    }    
+ 
     var productId = null;
     if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) {
-        var gallery = findGallery();
+        var gallery = galleryFactory();
         if (gallery !== null) {
-            preAdjustments(gallery.container);
+            gallery.preAdjustments();
             productId = ShopifyAnalytics.meta.product.id;
             var el = document.createElement('script');
             el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
