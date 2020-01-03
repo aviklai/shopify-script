@@ -11,7 +11,8 @@
             {container: '.Product__Gallery', element: '.Product__SlideItem'},
             {container: '.product-single__photo-wrapper', element: '.product-single__photo', preAdjustments: function() { commonElementAdjustment(this.element) }},
             {container: '.product-single__featured-image-wrapper', element: '.product-single__photos', preAdjustments: function() { commonElementAdjustment(this.element) }},
-            {container: '.product__photo', element: '.product__photo--single', preAdjustments: function() { commonElementAdjustment(this.element) }}
+            {container: '.product__photo', element: '.product__photo--single', preAdjustments: function() { commonElementAdjustment(this.element) }},
+            {container: '.photos__item', element: '.product-single__photo', preAdjustments: function() { commonElementAdjustment(this.element) }}
         ]
     }  
 
