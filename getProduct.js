@@ -36,7 +36,7 @@
 
     var productId = null;
     if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) {
-        var gallery = this.findGallery();
+        var gallery = findGallery();
         if (gallery !== null) {
             preAdjustments(gallery.container);
             productId = ShopifyAnalytics.meta.product.id;
