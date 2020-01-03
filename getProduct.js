@@ -16,6 +16,7 @@
             case '.' + gallery2.container:
                 document.getElementsByClassName(gallery2.element)[0].style.height = document.getElementsByClassName(gallery2.element)[0].offsetHeight + 'px';
                 document.getElementsByClassName(gallery2.element)[0].style.width = document.getElementsByClassName(gallery2.element)[0].offsetWidth + 'px';                
+                document.getElementsByClassName(gallery2.element)[0].style.paddingTop = "0px";                
                 break;
 
             default:
@@ -26,7 +27,6 @@
     function postAdjustments(container) {
         switch (container) {
             case '.' + gallery2.container:
-                document.getElementsByClassName(gallery2.element)[0].style.paddingTop = "0px";                
                 break;
         
             default:
@@ -36,7 +36,7 @@
 
     var productId = null;
     if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) {
-        var gallery = findGallery();
+        var gallery = this.findGallery();
         if (gallery !== null) {
             preAdjustments(gallery.container);
             productId = ShopifyAnalytics.meta.product.id;
