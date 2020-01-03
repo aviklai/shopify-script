@@ -7,7 +7,8 @@
                 document.querySelectorAll(this.element)[0].style.height = document.querySelectorAll(this.element)[0].offsetHeight + 'px';
                 document.querySelectorAll(this.element)[0].style.width = document.querySelectorAll(this.element)[0].offsetWidth + 'px';                
                 document.querySelectorAll(this.element)[0].style.paddingTop = "0px"; 
-            }}
+            }},
+            {container: '.product-single__featured-image-wrapper', element: '.product-single__photos'}
         ]
     }  
 
