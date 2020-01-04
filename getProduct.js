@@ -34,11 +34,13 @@
         return null;        
     }    
  
+    var shopId = null;    
     var productId = null;
     if (ShopifyAnalytics && ShopifyAnalytics.meta && ShopifyAnalytics.meta.product) {
         var gallery = galleryFactory(getGalleries());
         if (gallery !== null) {
             gallery.preAdjustments();
+            shopId = ShopifyAnalytics.meta.product.vendor;
             productId = ShopifyAnalytics.meta.product.id;
             var el = document.createElement('script');
             el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
