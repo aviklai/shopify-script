@@ -33,8 +33,9 @@
         }
         return null;        
     }    
- 
-    var productId = null; //get product from hidden input
+    
+    var storeId = window.checkout.storeId;
+    var productId = document.getElementById('product_addtocart_form').querySelectorAll('[name=product]')[0].value;
     var el = document.createElement('script');
     el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
     el.onload = ()=> {
