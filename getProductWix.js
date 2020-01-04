@@ -5,9 +5,12 @@
         }
         return null;
     }    
+    var shopId = null;
     var productId = null;
     var gallery = findGallery();
     if (gallery !== null) {
+        shopId = window.location.hostname;
+        productId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);        
         var el = document.createElement('script');
         el.setAttribute('src', 'https://v2.rest-ar.com/restar-injector.js')
         el.onload = ()=> {
